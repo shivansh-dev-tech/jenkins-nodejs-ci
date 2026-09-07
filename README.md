@@ -40,6 +40,7 @@ The included `Jenkinsfile` automatically:
 Configure a NodeJS tool in:
 
 **Manage Jenkins → Tools → NodeJS installations**
+Jenkins automatic CI test
 
 Use the name:
 
