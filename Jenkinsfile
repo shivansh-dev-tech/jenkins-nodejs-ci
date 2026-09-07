@@ -16,28 +16,28 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 echo 'Installing npm dependencies...'
-                sh 'npm ci'
+                bat 'npm install'
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Running automated tests...'
-                sh 'npm test'
+                bat 'npm test'
             }
         }
 
         stage('Build Check') {
             steps {
                 echo 'Checking Node.js application...'
-                sh 'npm run build'
+                bat 'npm run build'
             }
         }
 
         stage('Run Application') {
             steps {
                 echo 'Running Node.js application...'
-                sh 'npm start'
+                bat 'npm start'
             }
         }
     }
@@ -46,9 +46,11 @@ pipeline {
         success {
             echo 'BUILD SUCCESSFUL - CI pipeline completed.'
         }
+
         failure {
             echo 'BUILD FAILED - Check the console output.'
         }
+
         always {
             echo 'Jenkins pipeline execution finished.'
         }
